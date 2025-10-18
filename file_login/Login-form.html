@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <meta name="description" content="Halaman masuk resmi CHILL untuk mengakses koleksi film dan serial TV terbaik.">
+    
+    <!-- Penghubung html dna css -->
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+    
+    <main class="login-container">
+        
+        <header class="header-section">
+            <div class="logo-chill">
+                 <img src="logo-chill.png" alt="Memuat">
+            </div>
+            <h2>Masuk</h2>
+            <p class="subtitle">Selamat datang kembali!</p>
+        </header>
+        
+
+
+
+
+
+
+        
+        <!-- Form Login Utama -->
+        <form action="" class="Box-Container">
+            
+            <div class="input-group">
+                <!-- Label terhubung dengan input (baik untuk aksesibilitas dan SEO) -->
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username"
+                    name="username"
+                    placeholder="Masukkan username" 
+                    required
+                    aria-required="true"
+                >
+            </div>
+            
+            <div class="input-group password-group">
+                <label for="password">Kata Sandi</label>
+                <div class="password-field">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Masukkan kata sandi" 
+                        required
+                        aria-required="true"
+                    >
+                </div>
+                
+                
+                <div class="links-row">
+                    <span>Belum punya akun? <a href="../file_registrasi/registrasi.html">Daftar</a></span>
+                    <a href="#" class="forgot-link">Lupa kata sandi?</a>
+                </div>
+            </div>
+            
+            <div class="button-section">
+                <!-- Tombol utama untuk submit form -->
+                <button type="submit" class="btn btn-primary">Masuk</button>
+                
+                <p class="divider" role="separator">Atau</p>
+                
+                <!-- Tombol untuk login pihak ketiga -->
+                 <button type="submit" class="btn btn-google">
+                    <img src=google.png alt="Google Logo" class="google-logo">
+                    Masuk dengan Google
+                </button>
+            </div>
+
+        </form>
+    </main>
+</body>
+</html>

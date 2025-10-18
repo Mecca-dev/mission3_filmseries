@@ -1,0 +1,555 @@
+/* Styling Dasar: Mobile First */
+
+:root {
+    --primary-color: #e50914; 
+    --background-color: #141414; 
+    --text-color: #ffffff; 
+    --secondary-background: #222222; 
+    --hover-color: #8c8c8c; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    padding: 0 15px;
+}
+
+.main-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* ------------------------------------------------------------------- */
+/* HEADER STYLING (Mobile) */
+/* ------------------------------------------------------------------- */
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 15px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color); 
+}
+
+.main-nav {
+    display: none; /* Sembunyikan navigasi di mobile */
+}
+
+.profile-avatar img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--text-color);
+}
+
+main {
+    padding-top: 50px; 
+}
+
+/* ------------------------------------------------------------------- */
+/* HERO SECTION STYLING (Mobile) */
+/* ------------------------------------------------------------------- */
+
+#hero-section {
+    padding: 0;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image-overlay {
+    background-image: url('../file_gambar/Dutyherosection.png'); /* Ganti dengan URL gambar Anda */
+    background-size: cover;
+    background-position: top center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.hero-image-overlay::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0) 40%, rgba(20, 20, 20, 0.6) 70%, rgba(20, 20, 20, 1) 100%);
+}
+
+.hero-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    padding: 20px 15px;
+}
+
+.hero-info h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.hero-info .description {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-bottom: 20px;
+    display: -webkit-box ;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-play {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+.btn-more {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: var(--text-color);
+}
+
+.hero-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-meta .rating {
+    border: 1px solid var(--text-color);
+    padding: 2px 5px;
+    font-size: 0.8em;
+    border-radius: 19px;
+}
+
+.volume-control {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--text-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+
+
+/* MOVIE LIST STYLING (Horizontal Scroll - Mobile Default) */
+
+
+.movie-section-wrapper {
+    position: relative;
+}
+
+/* Panah Navigasi: Sembunyikan di Mobile secara default */
+.nav-arrow {
+    display: none; 
+}
+
+.movie-list-container {
+    display: flex;
+    overflow-x: scroll;
+    padding: 0 15px;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.movie-list-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Kartu Standar (Section 3, 4, 5) */
+.movie-card {
+    flex-shrink: 0;
+    position: relative;
+    width: 120px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.badge, .label {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 2px 5px;
+    font-size: 0.7em;
+    border-radius: 3px;
+    font-weight: bold;
+    z-index: 5;
+}
+
+.label {
+    top: 5px;
+    left: 5px;
+    background-color: #000;
+    border: 1px solid var(--primary-color);
+}
+
+/* Kartu Lanjutan (Section 2) - LEBIH BESAR DI MOBILE */
+#lanjutkan-tonton .continued-card {
+    width: 250px; 
+    height: 140px; 
+    overflow: hidden;
+}
+
+#lanjutkan-tonton .continued-card img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+#lanjutkan-tonton .continued-card .card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    color: var(--text-color);
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    border-radius: 0 0 4px 4px;
+}
+
+#lanjutkan-tonton .continued-card .card-info p {
+    font-weight: bold;
+    margin-bottom: 3px;
+    font-size: 0.9em;
+}
+
+#lanjutkan-tonton .continued-card  {
+    font-size: 0.8em;
+    color: #ccc;
+    border-radius: 20px;
+}
+
+
+
+/* FOOTER STYLE (Mobile Default - Accordion) */
+footer {
+    background-color: var(--secondary-background);
+    padding: 30px 15px;
+    font-size: 0.9em;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo-copyright .logo {
+    margin-bottom: 5px;
+}
+
+.footer-logo-copyright p {
+    color: var(--hover-color);
+    margin-bottom: 20px;
+}
+
+/* Styling untuk DETAILS/SUMMARY (Accordion Mobile) */
+.genre-details, .bantuan-details {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+}
+
+.genre-details summary, .bantuan-details summary {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--text-color);
+    padding: 5px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.genre-details summary::-webkit-details-marker,
+.bantuan-details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* ikon panah (>) untuk mobile / hp  */
+.genre-details summary::after, .bantuan-details summary::after {
+    content: '>';
+    font-size: 1.2em;
+    transition: transform 0.3s;
+}
+
+.genre-details[open] summary::after, .bantuan-details[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.genre-content, .bantuan-content {
+    padding: 10px 0;
+}
+
+.genre-list, .bantuan-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; 
+}
+
+.bantuan-list {
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+/* DESKTOP STYLING (Media Query) */
+
+@media (min-width: 768px) {
+    
+    /* HEADER: Tampilkan Navigasi Penuh */
+    header {
+        padding: 15px 40px;
+    }
+
+    .header-container {
+        justify-content: flex-start; 
+        gap: 30px; 
+    }
+
+    .main-nav {
+        display: flex; 
+        align-items: center;
+        gap: 20px;
+        flex-grow: 1; 
+    }
+    
+    .main-nav a {
+        font-size: 1em;
+        padding-bottom: 3px;
+        transition: color 0.3s;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+        color: var(--hover-color);
+        border-bottom: 2px solid var(--primary-color);
+    }
+    
+    .profile-avatar {
+        margin-left: auto;
+    }
+
+    /* MAIN CONTENT: Tambahkan padding horizontal */
+    h2 {
+        padding: 0 40px;
+    }
+    
+    /* HERO SECTION: Tampilan Desktop */
+    #hero-section {
+        min-height: 550px;
+    }
+
+    .hero-info {
+        padding: 50px 40px; 
+        max-width: 50%; 
+    }
+
+    .hero-info h1 {
+        font-size: 3.5em;
+    }
+
+    .hero-info .description {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+        -webkit-line-clamp: unset; 
+    }
+    
+    .btn {
+        padding: 12px 30px;
+        font-size: 1.1em;
+    }
+
+    /* MOVIE LIST: Aktifkan Panah Navigasi dan Sesuaikan Ukuran Card */
+    .movie-section-wrapper {
+        padding: 0 40px;
+        margin: 0;
+    }
+
+    /* Tampilkan Panah Navigasi di Desktop */
+    .nav-arrow {
+        display: flex; 
+        position: absolute;
+        top: 0;
+        transform: translateY(0);
+        height: 100%;
+        width: 40px;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: var(--text-color);
+        font-size: 2em;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        opacity: 0.8;
+    }
+    
+    .left-arrow {
+        left: 40px; /* Posisi di padding wrapper */
+    }
+
+    .right-arrow {
+        right: 40px; /* Posisi di padding wrapper */
+    }
+
+    .movie-section-wrapper:hover .nav-arrow:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .movie-list-container {
+        padding: 0 50px; /* Tambahkan padding di list agar tidak tertutup panah */
+        gap: 20px;
+    }
+    
+    /* Kartu Standar (Section 3, 4, 5) */
+    .movie-card {
+        width: 180px; 
+    }
+
+    /* Kartu Lanjutan (Section 2) - KECIL DI DESKTOP */
+    #lanjutkan-tonton .continued-card {
+        width: 250px; 
+        height: 80px; /* Lebih pendek di desktop */
+    }
+
+    /* FOOTER: Layout Kolom */
+    footer {
+        padding: 50px 40px;
+    }
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    .footer-logo-copyright {
+        flex-basis: 25%;
+    }
+
+    .footer-genre-bantuan {
+        display: flex;
+        gap: 50px;
+        flex-basis: 70%;
+    }
+    
+    /* Genre & Bantuan Detail: NON-Accordion di Desktop */
+    .genre-details, .bantuan-details {
+        border-top: none; 
+        padding: 0;
+        flex-basis: 50%;
+    }
+    
+    .genre-details summary, .bantuan-details summary {
+        cursor: default;
+        font-weight: bold;
+        padding: 0;
+        margin-bottom: 15px;
+        pointer-events: none;
+    }
+    
+    .genre-details summary::after, .bantuan-details summary::after {
+        content: none;
+    }
+
+    .genre-content, .bantuan-content {
+        display: block !important;
+        padding: 0;
+    }
+
+    .genre-list {
+        flex-direction: row;
+        gap: 10px 20px;
+    }
+    
+    .genre-list li {
+        width: 40%; 
+    }
+    
+    .bantuan-details {
+        flex-basis: 25%;
+    }
+
+    .bantuan-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi</title>
+    <!-- untuk menghubungkan html ke css -->
+    <link rel="stylesheet" href="registrasi_style.css">
+</head>
+<body>
+
+    <main class="registrasi-container">
+
+         <!-- bagaian logo, judul daftar, dan ucapan -->
+        <header class="header-section">
+            <div class="logo-chill">
+                <img src="logo-chill.png" alt="Memuat">
+            </div>
+                <h2>Daftar</h2>
+                <p class="subtitle">Selamat datang!</p>
+        </header>
+
+        <!-- form center disini -->
+    <form action="" class="Box-Container">
+
+        <!-- bagian username -->
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input 
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Masukkan Username"
+            required
+            aria-required="true"         >
+        </div>
+<!-- bagian password -->
+        <div class="input-group password-group">
+            <label for="password">Kata Sandi</label>
+            <div class="password-field"></div>
+                 <input type="password"
+                 id="password"
+                 name="password"
+                 placeholder="Masukkan Kata Sandi"
+                 required
+                 aria-required="true">
+        </div>
+<!-- bagian konfirmasi password -->
+                 <div class="input-group confirm-group">
+                    <label for="confirm-password">
+                        Konfirmasi Kata Sandi
+                    </label>
+                    <input type="password"
+                    id="confirm-password"
+                    name="confirm-password"
+                    placeholder="Konfirmasi Kata Sandi"
+                    required
+                    aria-required="true">
+                 </div>
+
+                 <!-- pindah to login form -->
+                 <div class="links-row">
+                    <span >
+                        Sudah punya akun?
+                        <a href="../file_login/Login-form.html">Masuk</a>
+                    </span>
+                 </div>
+
+                 <!-- Bagian button Daftar -->
+                 <div class="button-section">
+                    <button type="submit" class="btn btn-primary">Daftar</button>
+
+                    <p class="divider" role="separator">Atau</p>
+
+                    <button type="submit" class="btn btn-google">
+                    <img src=google.png alt="G" class="google-logo">
+                    Masuk dengan Google
+                </button>
+                    </a>
+                 </div>
+                 
+                 
+                
+        </div>
+     
+
+
+
+
+
+
+
+
+
+
+            
+
+          </form>
+    </main>
+</body>
+</html>
